@@ -23,3 +23,8 @@
     border-image: linear-gradient(45deg, #f472b6, #fbb6ce, #ec4899);
     border-image-slice: 1;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+

@@ -72,9 +72,11 @@ export function Landing() {
                     />
                 </div>
 
-                <button className="mt-4 px-6 py-3 bg-white text-black font-semibold rounded-full shadow hover:bg-gray-200 transition">
+                <a className="mt-4 px-6 py-3 bg-white text-black font-semibold rounded-full shadow hover:bg-gray-200 transition"
+                       href={"#home"}
+                >
                     Try Now
-                </button>
+                </a>
             </motion.div>
         </div>
     );

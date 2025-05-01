@@ -21,7 +21,7 @@ export function Guide() {
                 className="relative z-10 text-center max-w-3xl"
             >
                 <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent mb-4">
-                    Switch Your Style Seamlessly
+                    Switch Your Path Seamlessly
                 </h2>
                 <p className="text-black text-lg max-w-xl mx-auto">
                     Perfect for messages where tone matters — this tool makes it easy to sound right, every time.

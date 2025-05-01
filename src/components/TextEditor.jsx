@@ -14,7 +14,7 @@ export function TextEditor({ value, onChange, loadingState }) {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow p-6 w-full space-y-4 border-2 border-gray-300"> {/* Added border here */}
+        <div className="bg-white rounded-2xl shadow p-6 w-full space-y-4 border-2 border-gray-300">
             <div className="flex justify-between items-center">
                 <h3 className="text-lg font-semibold">Text Editor</h3>
                 {loadingState === "loading" && (
@@ -31,7 +31,7 @@ export function TextEditor({ value, onChange, loadingState }) {
                 disabled={loadingState === "loading"}
                 rows={12}
                 placeholder="Enter your text here to adjust its tone..."
-                className="w-full rounded-lg border border-gray-300 p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 bg-gray-50 resize-none"
+                className="w-full rounded-lg border border-gray-300 p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 bg-gray-50 resize-none font-sans italic"
             />
         </div>
     );
