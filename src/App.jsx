@@ -1,7 +1,7 @@
-import {Landing} from "./components/Landing.jsx";
-import {Guide} from "./components/Guide.jsx";
-import {ToneSlider} from "./components/ToneSlider.jsx";
-import {Footer} from "./components/Footer.jsx";
+import {Landing} from "./pages/Landing.jsx";
+import {Guide} from "./pages/Guide.jsx";
+import {ToneSliderPage} from "./pages/ToneSliderPage.jsx";
+import {Footer} from "./pages/Footer.jsx";
 import { Toaster } from 'sonner';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
             <Toaster/>
                 <Landing/>
                 <Guide/>
-                <ToneSlider/>
+                <ToneSliderPage/>
                 <Footer/>
 
         </div>

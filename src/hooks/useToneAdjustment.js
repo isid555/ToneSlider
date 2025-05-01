@@ -6,7 +6,10 @@ import { toast } from 'sonner';
 
 const adjustToneFunction = adjustTone;
 
-export function useToneAdjustment(initialContent = '') {
+const defaultText = `Hey there! This is a sample paragraph to get you started. It's here to give you an idea of how your content might look before you start typing your own text. Feel free to adjust it as needed. The tone of this content can be modified to be more formal or casual, depending on the settings you choose.`;
+
+
+export function useToneAdjustment(initialContent = defaultText) {
     const initialState = { content: initialContent, toneLevel: 50 };
     const { state, setState, undo, redo, reset, canUndo, canRedo } = useUndoRedo(initialState);
     const [loadingState, setLoadingState] = useState('idle');
