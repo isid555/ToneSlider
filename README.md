@@ -6,7 +6,7 @@ Backend : https://toneslider.up.railway.app
 Live : https://tone-slider.vercel.app/
 ---
 
-# Final Output
+# Final Output Demo
 
 https://github.com/user-attachments/assets/24f3e286-d09b-415b-9f5d-f9d6f18b74a1
 
@@ -131,7 +131,7 @@ User can now:
 ↪️ Redo → Move forward in history
 🔄 Reset → Go back to the very first state(default)
 
-# Undo/Redo/Reset Video
+# Undo/Redo/Reset Demo
 https://github.com/user-attachments/assets/0ca5625d-2a51-4fdf-aa80-ee1a53962652
 
 ## ⚠️ Edge Case Handling
@@ -157,7 +157,7 @@ To enhance user experience, use toasts for feedback:
 
 
 ---
-# Error Handling Videos
+# Error Handling Demos
 
 https://github.com/user-attachments/assets/96eba9cb-82c8-4ebf-902d-10bc4072b30b
 
