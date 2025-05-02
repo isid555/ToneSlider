@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Slider, IconButton, Tooltip } from "@mui/material";
 import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
 
 export function ToneSlider({
@@ -28,83 +27,79 @@ export function ToneSlider({
         return () => clearTimeout(timer);
     }, [localValue, onValueChange, value]);
 
-    const handleSliderChange = (_, newValue) => {
-        setLocalValue(newValue);
+    const handleSliderChange = (e) => {
+        setLocalValue(Number(e.target.value));
     };
 
     return (
-        <div className="border-2 border-gray-300 rounded-xl p-4 shadow-md flex flex-col gap-4 min-w-[280px]">
-            <div className="flex justify-between items-center mb-4">
-                <h6 className="font-semibold text-lg">Adjust Tone</h6>
+        <div className="border border-gray-700 rounded-xl p-6 shadow-lg bg-black text-white flex flex-col gap-4 min-w-[280px]">
+            <div className="flex justify-between items-center mb-2">
+                <h6 className="font-semibold text-lg tracking-tight">Adjust Tone</h6>
                 <div className="flex gap-2">
-                    <Tooltip title="Undo">
-                        <span>
-                            <IconButton
-                                onClick={onUndo}
-                                disabled={!canUndo}
-                                sx={{ opacity: canUndo ? 1 : 0.3 }}
-                            >
-                                <ArrowLeft size={18} />
-                            </IconButton>
-                        </span>
-                    </Tooltip>
-                    <Tooltip title="Redo">
-                        <span>
-                            <IconButton
-                                onClick={onRedo}
-                                disabled={!canRedo}
-                                sx={{ opacity: canRedo ? 1 : 0.3 }}
-                            >
-                                <ArrowRight size={18} />
-                            </IconButton>
-                        </span>
-                    </Tooltip>
-                    <Tooltip title="Reset">
-                        <IconButton onClick={onReset}>
-                            <RotateCcw size={18} />
-                        </IconButton>
-                    </Tooltip>
+                    <button
+                        onClick={onUndo}
+                        disabled={!canUndo}
+                        className={`p-2 rounded-full hover:bg-gray-800 transition-colors ${
+                            !canUndo ? "opacity-30 cursor-not-allowed" : ""
+                        }`}
+                        aria-label="Undo"
+                    >
+                        <ArrowLeft size={18} />
+                    </button>
+                    <button
+                        onClick={onRedo}
+                        disabled={!canRedo}
+                        className={`p-2 rounded-full hover:bg-gray-800 transition-colors ${
+                            !canRedo ? "opacity-30 cursor-not-allowed" : ""
+                        }`}
+                        aria-label="Redo"
+                    >
+                        <ArrowRight size={18} />
+                    </button>
+                    <button
+                        onClick={onReset}
+                        className="p-2 rounded-full hover:bg-gray-800 transition-colors"
+                        aria-label="Reset"
+                    >
+                        <RotateCcw size={18} />
+                    </button>
                 </div>
             </div>
 
-            <div className="flex justify-between mb-2 text-sm text-gray-500">
+            <div className="flex justify-between mb-1 text-sm text-gray-400 font-medium px-1">
                 <span>Formal</span>
                 <span>Casual</span>
             </div>
 
-            <Slider
-                value={localValue}
-                onChange={handleSliderChange}
-                min={0}
-                max={100}
-                step={1}
-                disabled={loadingState === "loading"}
-                sx={{
-                    '& .MuiSlider-thumb': {
-                        backgroundColor: "#000",
-                    },
-                    '& .MuiSlider-track': {
-                        backgroundColor: "#333",
-                    },
-                    '& .MuiSlider-rail': {
-                        backgroundColor: "#666",
-                    },
-                    opacity: loadingState === "loading" ? 0.6 : 1
-                }}
-            />
+            <div className="relative py-2">
+                <input
+                    type="range"
+                    value={localValue}
+                    onChange={handleSliderChange}
+                    min={0}
+                    max={100}
+                    step={1}
+                    disabled={loadingState === "loading"}
+                    className="w-full h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer disabled:opacity-50"
+                    style={{
+                        background: `linear-gradient(to right, white ${localValue}%, gray ${localValue}%)`,
+                        accentColor: "white"
+                    }}
+                />
+            </div>
 
             {loadingState === "loading" && (
                 <div className="flex justify-center py-2">
-                    <p className="text-sm text-gray-600 animate-pulse">Adjusting tone...</p>
+                    <p className="text-sm text-gray-400 animate-pulse">Adjusting tone...</p>
                 </div>
             )}
 
             <div className="text-center">
                 {loadingState === "success" && (
-                    <p className="text-green-700 text-sm">Tone adjusted successfully</p>
+                    <p className="text-white-400 text-sm">Tone adjusted successfully</p>
                 )}
                 {loadingState === "error" && (
-                    <p className="text-red-700 text-sm">Failed to adjust tone</p>
+                    <p className="text-red-400 text-sm">Failed to adjust tone</p>
                 )}
             </div>
         </div>

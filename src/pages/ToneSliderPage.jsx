@@ -1,3 +1,4 @@
+import React from "react";
 import { TextEditor } from "../components/TextEditor.jsx";
 import { ToneSlider } from "../components/ToneSlider.jsx";
 import { useToneAdjustment } from "../hooks/useToneAdjustment";
@@ -17,41 +18,45 @@ export function ToneSliderPage() {
     } = useToneAdjustment();
 
     return (
-        <section id={"home"}>
-            <div
-                className="relative min-h-screen bg-black overflow-hidden flex flex-col items-center justify-center p-6">
+        <section id="home">
+            <div className="relative min-h-screen bg-black overflow-hidden flex flex-col items-center justify-center p-6">
+                {/* Grid Background */}
                 <div
-                    className="absolute inset-0 z-0 pointer-events-none"
+                    className="absolute inset-0 z-0 pointer-events-none opacity-20"
                     style={{
-                        backgroundImage: `
-                        linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
-                    `,
-                        backgroundSize: '50px 50px',
+                        backgroundImage: ` 
+                        linear-gradient(to right, rgba(255,255,255,0.3) 2px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255,255,255,0.3) 2px, transparent 1px)
+            `,
+                        backgroundSize: '40px 40px',
                     }}
                 />
 
-                <div className="text-center text-white mb-8">
-                    <h1 className="text-3xl md:text-4xl font-extrabold">
+
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-60 z-0 pointer-events-none"></div>
+
+                <div className="absolute top-1/4 -left-32 w-90 h-90 bg-yellow-500 rounded-full filter blur-3xl opacity-0 animate-pulse"></div>
+                <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-green-500 rounded-full filter blur-3xl opacity-0 animate-pulse" style={{animationDelay: '1s'}}></div>
+
+                <div className="text-center text-white mb-10 z-10 max-w-4xl">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">
                         Refine Your <span
                         className="bg-gradient-to-r from-blue-400 via-cyan-200 to-blue-500 bg-clip-text text-transparent">Text</span> with
                         AI Precision
                     </h1>
-                    <p className="text-lg text-gray-300 mt-4">
+                    <p className="text-lg text-gray-300 mt-4 mx-auto max-w-3xl">
                         Adjust the <span
-                        className="bg-gradient-to-r from-pink-400 via-white-200 to-pink-500 bg-clip-text text-transparent">tone</span> of
-                        your text and instantly refine it for a more professional, casual, or clear message.
-                        You can <span
-                        className="bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-400 bg-clip-text text-transparent">undo</span> and <span
-                        className="bg-gradient-to-r from-teal-300 via-cyan-100 to-teal-500 bg-clip-text text-transparent">redo</span> your
-                        changes, or <span
-                        className="bg-gradient-to-r from-purple-400 via-indigo-300 to-purple-500 bg-clip-text text-transparent">reset</span> to
-                        the default version whenever needed.
+                        className="bg-gradient-to-r from-pink-400 to-pink-500 bg-clip-text text-transparent">tone</span> of
+                        your text and instantly refine it. Move between formal and casual styles with a simple slider.
+                        You can also <span className="text-white font-medium">undo</span>, <span
+                        className="text-white font-medium">redo</span>, or <span
+                        className="text-white font-medium">reset</span> the tone back at any time.
                     </p>
+
                 </div>
 
-                <div className="flex flex-col md:flex-row gap-8 items-center justify-center w-full max-w-7xl">
-                    <div className="w-full md:w-2/3 bg-white rounded-2xl shadow-md p-4">
+                <div className="flex flex-col lg:flex-row gap-8 items-start justify-center w-full max-w-7xl z-10">
+                    <div className="w-full lg:w-2/3 shadow-2xl">
                         <TextEditor
                             value={content || " "}
                             onChange={updateContent}
@@ -59,7 +64,7 @@ export function ToneSliderPage() {
                         />
                     </div>
 
-                    <div className="w-full md:w-1/3 bg-white rounded-2xl shadow-md p-4">
+                    <div className="w-full lg:w-1/3 shadow-2xl">
                         <ToneSlider
                             value={toneLevel}
                             onValueChange={adjustTone}
