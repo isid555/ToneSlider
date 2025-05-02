@@ -20,7 +20,7 @@ export function ToneSliderPage() {
     return (
         <section id="home">
             <div className="relative min-h-screen bg-black overflow-hidden flex flex-col items-center justify-center p-6">
-                {/* Grid Background */}
+
                 <div
                     className="absolute inset-0 z-0 pointer-events-none opacity-20"
                     style={{
@@ -58,7 +58,7 @@ export function ToneSliderPage() {
                 <div className="flex flex-col lg:flex-row gap-8 items-start justify-center w-full max-w-7xl z-10">
                     <div className="w-full lg:w-2/3 shadow-2xl">
                         <TextEditor
-                            value={content || " "}
+                            value={content}
                             onChange={updateContent}
                             loadingState={loadingState}
                         />

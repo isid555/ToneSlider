@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 
 export function TextEditor({ value, onChange, loadingState }) {
-    const defaultText = `Hey there! This is a sample paragraph to get you started. It's here to give you an idea of how your content might look before you start typing your own text. Feel free to adjust it as needed. The tone of this content can be modified to be more formal or casual, depending on the settings you choose.`;
-
+    const defaultText = "Hey from textEditor"
     useEffect(() => {
-        if (!value || value === " ") {
+        if (value === undefined) {
             onChange(defaultText);
         }
-    }, [value, onChange]);
+    }, []);
 
     const handleChange = (e) => {
         onChange(e.target.value);
