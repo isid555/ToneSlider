@@ -158,9 +158,12 @@ To enhance user experience, use toasts for feedback:
 
 ---
 # Error Handling Videos
-1. https://github.com/user-attachments/assets/96eba9cb-82c8-4ebf-902d-10bc4072b30b
-2. https://github.com/user-attachments/assets/8ea19873-0c96-4026-9589-9400a97c5324
-3. https://github.com/user-attachments/assets/17250def-d17d-4e47-a477-b34fc98e93ef
+
+https://github.com/user-attachments/assets/96eba9cb-82c8-4ebf-902d-10bc4072b30b
+
+https://github.com/user-attachments/assets/8ea19873-0c96-4026-9589-9400a97c5324
+
+https://github.com/user-attachments/assets/17250def-d17d-4e47-a477-b34fc98e93ef
 
 
 ### ✅ UX Benefits
