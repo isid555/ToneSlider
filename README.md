@@ -2,8 +2,6 @@
 
 ToneSlider is a dynamic web application that allows users to transform the **tone** of their text using a slider interface – shifting from formal to casual language or anywhere in between. Powered by **Mistral AI** and optimized with **Upstash Redis caching**, ToneSlider also provides an intuitive undo/redo experience to enable flexible and safe experimentation.
 
-Backend : https://toneslider.up.railway.app
----
 
 Live : https://tone-slider.vercel.app/
 ---
