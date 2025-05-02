@@ -186,19 +186,19 @@ Backend repo : https://github.com/isid555/ToneSlider-Backend
 
 1. Clone the repository:
 
-```json
+```bash
 git clone https://github.com/isid555/ToneSlider.git
 cd ToneSlider
 ```
 
 2. Install dependencies:
-```json
+```bash
 npm install
 ```
 
 3. Start the server
 
-```json
+```bash
 npm run dev
 ```
 
