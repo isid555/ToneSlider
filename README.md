@@ -173,6 +173,37 @@ https://github.com/user-attachments/assets/17250def-d17d-4e47-a477-b34fc98e93ef
 - Makes the app feel responsive and intelligent
 
 
+## ⚙️ Prerequisites
+Before setting up the project, ensure you have the following installed:
+
+Node.js (version 16 or higher)
+
+npm (comes with Node.js)
+
+## 📦 Getting Started
+Before getting into frontend part , setup the backend run it perfectly.
+Backend repo : https://github.com/isid555/ToneSlider-Backend
+
+1. Clone the repository:
+
+```json
+git clone https://github.com/isid555/ToneSlider.git
+cd ToneSlider
+```
+
+2. Install dependencies:
+```json
+npm install
+```
+
+3. Start the server
+
+```json
+npm run dev
+```
+
+
+
 ### 🙌 Contributions Welcome!
 We’d love your feedback, bug reports, and contributions! If you want to suggest tone mapping improvements, caching strategies, or new UI features, feel free to open an issue or a PR on GitHub.
 
