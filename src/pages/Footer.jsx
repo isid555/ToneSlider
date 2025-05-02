@@ -1,8 +1,53 @@
 import { motion } from 'framer-motion';
 import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 import { Typewriter } from 'react-simple-typewriter';
+import emailjs from '@emailjs/browser';
+import {useRef, useState} from "react";
+import {toast} from "sonner";
+
 
 export function Footer() {
+
+
+    const emailRef = useRef(null);
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+
+    const handleSubscribe = async (e) => {
+        e.preventDefault()
+        const email = emailRef.current.value;
+        if (!email || !/\S+@\S+\.\S+/.test(email)) {
+            setError(true);
+            return;
+        }
+
+        setLoading(true);
+        setError(false);
+
+
+        try {
+            await emailjs.send(
+                'service_bdxv1d9',
+                'template_3682zc3',
+                { user_email: email },
+                'GiqwMRLlurqj3qRQz'
+            );
+            setSuccess(true);
+            emailRef.current.value = '';
+            toast.success("🎉 Congratulations! You've successfully subscribed to ToneSlider. Thank you for joining us!");
+        } catch (err) {
+            console.error(err)
+            toast.error('Something went wrong . Enter correct EmailID');
+            setError(true);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+
+
+
     return (
         <footer className="relative w-full bg-white text-black px-6 py-20 mt-20 overflow-hidden">
             <div
@@ -76,13 +121,15 @@ export function Footer() {
                     <p className="text-sm text-gray-600">Subscribe to our newsletter for updates.</p>
                     <form className="flex flex-col sm:flex-row gap-2 w-full max-w-sm">
                         <input
+                            ref={emailRef}
                             type="email"
                             placeholder="Your email"
                             className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                         <button
+                            onClick={handleSubscribe}
                             className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
-                            Subscribe
+                            {loading ? 'Sending...' : 'Subscribe'}
                         </button>
                     </form>
                 </div>
